@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Excluir Autor</title>
+</head>
+<body>
+    <h2>Excluir Autor</h2>
+    <p>Tem certeza que deseja excluir "{{ author.name }}"?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sim, excluir</button>
+    </form>
+    <a href="{% url 'author_list' %}">Cancelar</a>
+</body>
+</html>

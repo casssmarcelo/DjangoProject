@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if form.instance.pk %}Editar Autor{% else %}Criar Novo Autor{% endif %}</title>
+</head>
+<body>
+    <h2>{% if form.instance.pk %}Editar Autor{% else %}Criar Novo Autor{% endif %}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="{% url 'author_list' %}">Voltar para Lista</a>  <!-- Corrigido! -->
+</body>
+</html>
