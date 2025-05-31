@@ -1,2 +1,30 @@
-.venv/
-.venv
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Django
+*.sqlite3
+*.log
+media
+
+# IDEs
+.vscode/
+.idea/
+
+# Environment variables
+.env
+venv/
+ENV/
+env/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+
+# macOS
+.DS_Store

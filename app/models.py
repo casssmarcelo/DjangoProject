@@ -7,7 +7,6 @@ class Item(models.Model):
     def __str__(self):
         return self.name
 
-
 class Category(models.Model):
     name = models.CharField(max_length=100)
     items = models.ManyToManyField(Item, related_name='categories')
@@ -15,7 +14,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Publisher (models.Model):
+class Publisher(models.Model):
     name = models.CharField(max_length=100)
     items = models.ManyToManyField(Item, related_name='publisher')
 

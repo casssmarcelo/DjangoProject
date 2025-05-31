@@ -66,7 +66,6 @@ def category_delete(request, pk):
         return redirect('category_list')
     return render(request, 'app/category_confirm_delete.html', {'category': category})
 
-
 def publisher_list(request):
     publisher = Publisher.objects.all()
     return render(request, 'app/publisher_list.html', {'publisher': publisher})

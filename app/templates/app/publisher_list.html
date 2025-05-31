@@ -1,11 +1,37 @@
-<h1>Publisher</h1>
-<ul>
-    {% for publisher in publishers %}
-        <li>
-            {{ publisher.name }} -
-            <a href="{% url 'publisher_update' publisher.pk %}">Edit</a> -
-            <a href="{% url 'publisher_delete' publisher.pk %}">Delete</a>
-        </li>
-    {% endfor %}
-</ul>
-<a href="{% url 'publisher_create' %}">New Publisher</a>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Publishers</title>
+    <style>
+        body { font-family: Arial; background: #f8f9fa; padding: 40px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #343a40; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 12px; border-bottom: 1px solid #dee2e6; display: flex; justify-content: space-between; align-items: center; }
+        .actions a { margin-left: 10px; color: #007bff; text-decoration: none; }
+        .actions a:hover { text-decoration: underline; }
+        .new-publisher { display: inline-block; margin-top: 20px; padding: 10px 16px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+        .new-publisher:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Lista de Publishers</h1>
+        <ul>
+            {% for publisher in publishers %}
+                <li>
+                    {{ publisher.name }}
+                    <span class="actions">
+                        <a href="{% url 'publisher_update' publisher.pk %}">Editar</a>
+                        <a href="{% url 'publisher_delete' publisher.pk %}">Excluir</a>
+                    </span>
+                </li>
+            {% empty %}
+                <li>Nenhum publisher cadastrado.</li>
+            {% endfor %}
+        </ul>
+        <a class="new-publisher" href="{% url 'publisher_create' %}">+ Novo Publisher</a>
+    </div>
+</body>
+</html>

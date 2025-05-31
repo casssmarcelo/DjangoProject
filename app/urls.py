@@ -8,7 +8,6 @@ urlpatterns = [
     path('delete/<int:pk>/', views.item_delete, name='item_delete'),
     path('items/', views.item_list, name='item_list_alt'),
 
-
     path('categories/', views.category_list, name='category_list'),
     path('categories/new/', views.category_create, name='category_create'),
     path('categories/edit/<int:pk>/', views.category_update, name='category_update'),
