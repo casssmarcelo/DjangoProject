@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Item, Category, Publisher
-from .forms import ItemForm, CategoryForm, PublisherForm
+from .models import Item, Category, Publisher, Author
+from .forms import ItemForm, CategoryForm, PublisherForm, AuthorForm
 
 def item_list(request):
     items = Item.objects.all()
@@ -98,3 +98,36 @@ def publisher_delete(request, pk):
         publisher.delete()
         return redirect('publisher_list')
     return render(request, 'app/publisher_confirm_delete.html', {'publisher': publisher})
+
+
+def author_list(request):
+    authors = Author.objects.all()
+    return render(request, 'app/author_list.html', {'authors': authors})
+
+def author_create(request):
+    if request.method == 'POST':
+        form = AuthorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('author_list')
+    else:
+        form = AuthorForm()
+    return render(request, 'app/author_form.html', {'form': form})
+
+def author_update(request, pk):
+    author = get_object_or_404(Author, pk=pk)
+    if request.method == 'POST':
+        form = AuthorForm(request.POST, instance=author)
+        if form.is_valid():
+            form.save()
+            return redirect('author_list')
+    else:
+        form = AuthorForm(instance=author)
+    return render(request, 'app/author_form.html', {'form': form})
+
+def author_delete(request, pk):
+    author = get_object_or_404(Author, pk=pk)
+    if request.method == 'POST':
+        author.delete()
+        return redirect('author_list')
+    return render(request, 'app/author_confirm_delete.html', {'author': author})
