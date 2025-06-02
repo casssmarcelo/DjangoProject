@@ -1,6 +1,6 @@
-# TucumaSoft 1.2
+# TucumaSoft 2.0
 
-> **Versão**: 1.2
+> **Versão**: 2.0
 
 ## Descrição
 
@@ -57,14 +57,14 @@ http://127.0.0.1:8000/
 
 ## Versão
 
-- **TucumaSoft**: 1.2
+- **TucumaSoft**: 2.0
 - Registre sua versão a partir dessa.
 
 ## Equipe
 
-- **Nome da equipe**: ______________________
-- **Tech Leader**: ______________________
-- **Dev1**: ______________________
-- **Dev2**: ______________________
-- **Dev3**: ______________________
-
+- **Nome da equipe**: EQUIPE DO 00
+- **Tech Leader**: CASSIUS MARCELO
+- **Dev1**: ELLEN
+- **Dev2**: LAIS
+- **Dev3**: DARIO
+- **Dev4**: VALERIA
