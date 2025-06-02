@@ -14,4 +14,14 @@ urlpatterns = [
     path('categories/edit/<int:pk>/', views.category_update, name='category_update'),
     path('categories/delete/<int:pk>/', views.category_delete, name='category_delete'),
 
+    path('publisher/', views.publisher_list, name='publisher_list'),
+    path('publisher/new/', views.publisher_create, name='publisher_create'),
+    path('publisher/edit/<int:pk>/', views.publisher_update, name='publisher_update'),
+    path('publisher/delete/<int:pk>/', views.publisher_delete, name='publisher_delete'),
+
+    path('authors/', views.author_list, name='author_list'),
+    path('authors/new/', views.author_create, name='author_create'),
+    path('authors/edit/<int:pk>/', views.author_update, name='author_update'),
+    path('authors/delete/<int:pk>/', views.author_delete, name='author_delete'),
+
 ]
